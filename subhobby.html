@@ -42,12 +42,11 @@ article {
     </b>
  <ul> 
  </br>
-    <li><a href="works/hath.pdf">Quizzes</a></li>
     <li><a href="official.html">Official Appearance</a></li>
     <li><a href="external.html">External Sources</a></li>
     <li><a href="other.html">Related Figures</a></li>
     <li><a href="moha.html">Moha(Videos)</a></li>
-    <li><a href="mohap.html">Moha(Pictures)</a></li>
+    <li><a href="works/hath.pdf">Quizzes</a></li>
   </ul>
 
   <head>
@@ -110,7 +109,6 @@ i=0
 
 
 <article>
-<!DOCTYPE html>
 <html>
 <head>
 <script>
@@ -165,14 +163,29 @@ function startTime() {
     var secs = h * 3600 + m * 60 + s;
     m = checkTime(m);
     s = checkTime(s);
+    secs = checksec(secs)
     document.getElementById('txt').innerHTML =
-    "Now is " +  month + "/" + day + "/" + year + " " + h + ":" + m + ":" + s +
-    ". He is Still ALIVE and is " + 
-    age + " years " + amonth + " months " + aday + " days " + secs + " seconds old";
-    var t = setTimeout(startTime, 0);
-    
+    "Current time is " +  month + "/" + day + "/" + year + " " + h + ":" + m + ":" + s +
+    ". He is Still <b>ALIVE</b>. <br> He is " + 
+    age + " years " + amonth + " months " + aday + " days " + secs + " seconds old.";
+    var t = setTimeout(startTime, 0); 
 }
 
+function checksec(secs){
+	if(secs < 10){
+		secs = "0000" + secs
+	}else if(secs < 100){
+		secs = "000" + secs
+	}else if(secs < 1000){
+		secs = "00" + secs
+	}else if(secs < 10000){
+		secs = "0" + secs
+	}else{
+		secs =  secs
+	}
+	return secs
+ 
+}
 function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
@@ -187,13 +200,14 @@ function checkTime(i) {
 <div id="txt"></div>
 </article>
 <article>
-
   <img src="picture/zhangzhe/jiangzemin.png" 
   alt="BiaozhunXiang"
-  style="width:510px;height:754px;">
+  style="width:412px;height:620px;">
 </article>
 <article>
-<br> Background Music, Play if you like
+<h3>Song for him(<i>Play if you like</i>)</h3>
+</article>
+<article>
 <audio controls loop = "loop" style="width: 480px;">
         <source src = "music/zjxsdbz.mp3" type ="audio/mpeg">
 </audio>
