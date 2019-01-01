@@ -163,6 +163,7 @@ function startTime() {
     var secs = h * 3600 + m * 60 + s;
     m = checkTime(m);
     s = checkTime(s);
+    h = checkTime(h);
     secs = checksec(secs)
     document.getElementById('txt').innerHTML =
     "Current time is " +  month + "/" + day + "/" + year + " " + h + ":" + m + ":" + s +
